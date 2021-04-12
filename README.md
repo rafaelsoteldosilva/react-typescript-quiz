@@ -1,46 +1,26 @@
-# Getting Started with Create React App
+<p align='left'>
+    <img src="https://tinyimg.io/i/FrdnSlj.png" alt="React Typescript Trivia Quiz" />
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Typescript Trivia Quiz
 
-## Available Scripts
+This is a simple app created using the well known create-react-app, using typescript
 
-In the project directory, you can run:
+## What does "React Typescript Trivia Quiz" do?
 
-### `npm start`
+It simply presents the user with some trivia questions, the user has to choose among 4 alternatives.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The app simply consumes the Open trivia Database, https://opentdb.com/
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+It takes a set of 10 questions along with its alternatives and correct answers, and send each one of them to a component named QuestionCard.tsx, which shows the in a beautiful way
 
-### `npm test`
+## Inner aspects of the App
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The main component is App.tsx, which loads the 10 questions, each question comes with four alternatives, and the correct answer.
+It loads that info into several inner states (questions, answers, etc.), then it shows each using the QuestionCard.tsx component. I also sends the checkAnswer method as a callback
 
-### `npm run build`
+It shuffles the alternative answers to avoid having the correct answer in the same position
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The app uses fecth to consume the api to Open trivia Database
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The app also uses styled-components to style the front end
